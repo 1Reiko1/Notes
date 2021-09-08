@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="./css/register.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="./js/jquery.min.js"></script>
+    <script>
+        function validate_form() {
+            //验证邮箱合法性
+            var pattern = /^([a-zA-Z0-9_-])(\w|\-)+@([a-zA-Z0-9])+\.([a-zA-Z]{2,4})$/;
+            var email = $('#email').val();
+            var password = $('#password1').val();
+            if (!email) {
+                alert('请输入邮箱');
+                return false;
+            } else
+            if (!pattern.test(email)) {
+                alert('邮箱格式不正确');
+                return false;
+            }
+            if (!password) {
+                alert('请输入密码');
+                return false;
+            } else if (password.length < 6 || password.length > 12) {
+                alert('密码长度不符合要求，请输入6-12位密码!');
+                return false;
+            }
+            if (password != $('#password2').val()) {
+                alert('两次输入的密码不一致！！请重新输入')
+                return false;
+            }
+            $.ajax({
+                type: 'post',
+                url: 'http://localhost:3000/register',
+                dataType: 'json',
+                data: {
+                    email: email,
+                    password: password
+                },
+                success: function(data) {
+                    if (data.code == 1) {
+                        location.href = "./index.html";
+                    } else {
+                        console.log('error');
+                    }
+
+                },
+                error: function(error) {
+                    console.log(222);
+                }
+            })
+            return false;
+        }
+    </script>
+</head>
+
+<body class="bg">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <form onsubmit="return validate_form()">
+                <div>
+                    <div class="title">
+                        <h2>简笔记</h2>
+                    </div>
+                    <p class="text-center top-title"><strong>注册新用户</strong></p>
+                    <hr>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="邮箱">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password1" placeholder="密码">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password2" placeholder="确认密码">
+                    </div>
+                    <button type="submit" class="btn btn-block">注册</button>
+                    <p class="text-center"><a href="./index.html">或<strong>登录</strong></a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</html>
+
+</html>

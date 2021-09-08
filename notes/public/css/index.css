@@ -1,0 +1,235 @@
+body {
+    font-family: gillsans, "Microsoft YaHei";
+    font-size: 16px;
+    background-color: #fff;
+    padding: 0;
+}
+
+.navbar {
+    margin: 0 auto;
+    width: 78.0625rem;
+    background-color: #fff;
+    border-bottom: .1875rem solid #fff;
+    border-radius: 0;
+    color: #454c57;
+}
+
+@media (max-width: 991px) {
+    .w-container>.navbar-right {
+        background: #454c57;
+    }
+}
+
+@media (max-width: 768px) {
+    nav .navbar-header .navbar-right {
+        background-color: #77b245;
+    }
+    nav .navbar-header,
+    nav .navbar-header ul>li>a {
+        padding-top: .9375rem;
+    }
+}
+
+body>.w-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.navbar-header {
+    height: 4.375rem;
+    margin: 0 auto;
+    color: #fff;
+    border-bottom: .1875rem;
+    width: 78.0625rem;
+    padding-left: 1.875rem;
+    padding-right: 2.5rem;
+}
+
+.navbar .navbar-header .title {
+    float: left;
+}
+
+.navbar .navbar-header .title h1 {
+    font-family: '幼圆';
+    color: #96cc68;
+    line-height: 4.0625rem;
+}
+
+.navbar .navbar-header .navbar-right li {
+    float: right;
+    list-style: none;
+}
+
+.navbar .navbar-header .navbar-right li a {
+    text-decoration: none;
+    color: #454c57;
+    line-height: 4.0625rem;
+}
+
+.navbar .navbar-header .navbar-right li a:hover {
+    color: #96cc68;
+    cursor: pointer;
+}
+
+.main {
+    color: #fff;
+    overflow: hidden;
+}
+
+.main>div {
+    margin: 0;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 6.875rem;
+}
+
+.main>div:first-child {
+    margin-left: -0.9375rem;
+    padding-right: .875rem;
+}
+
+.main>div:last-child {
+    margin-right: -0.9375rem;
+    padding-left: .875rem;
+    padding-right: 0;
+}
+
+@media (min-width: 992px) {
+    .main>div:first-child {
+        width: 76.625rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .main>div:first-child {
+        margin-left: 0;
+    }
+    .main>div:last-child {
+        margin-top: 15px;
+        padding-right: 15px;
+    }
+}
+
+.main .main-bg {
+    position: absolute;
+    left: 5rem;
+    margin-top: -10px;
+    width: 76.625rem;
+    height: 43.5625rem;
+    z-index: 0;
+    border-radius: 10px;
+    background: #75818C;
+}
+
+.main .main-bg img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.main .top {
+    position: relative;
+    height: 20rem;
+}
+
+.main .top p {
+    position: absolute;
+    width: 100%;
+}
+
+.main .title {
+    margin-top: 8.4375rem;
+    font-size: 20px;
+}
+
+.main form {
+    width: 15.625rem;
+    font-size: 14px;
+    position: relative;
+    left: 50%;
+    margin-left: -130px;
+    border-radius: 10px;
+}
+
+.main form .top-title {
+    margin: auto;
+}
+
+.main form hr {
+    margin: 0.4rem;
+    border: none;
+    background: #50ae12;
+    opacity: 1;
+    height: .125rem;
+    min-height: .0625rem;
+}
+
+.main form .form-group {
+    margin-bottom: 1rem;
+}
+
+.main form .form-group .form-control {
+    border-radius: 6.25rem;
+}
+
+
+/* .main form .checkbox {
+    margin-top: 0.06rem;
+    margin-bottom: 0.1rem;
+} */
+
+.main form a {
+    color: #d5d7da;
+}
+
+.main form p>a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.main form p>a:hover {
+    text-decoration: underline;
+}
+
+.main form button {
+    width: 100%;
+    background: #50ae12;
+    color: #fff;
+    border-radius: 6.25rem;
+    margin: auto;
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    margin-top: .9rem;
+}
+
+footer ul {
+    text-align: center;
+}
+
+footer ul li {
+    position: relative;
+    display: inline-block;
+    padding: 0 1rem;
+}
+
+footer ul li:not(:first-child):before {
+    content: "|";
+    position: relative;
+    left: -1rem;
+    top: 0;
+    color: #8e929a;
+}
+
+footer ul li a {
+    font-size: 0.12rem;
+    color: #b8b9bc;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: #50ae12;
+    text-decoration: none;
+}

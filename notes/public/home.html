@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/home.css">
+    <script src="./js/home.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="title">
+                <h1>简笔记</h1>
+            </div>
+            <div class="navbar-collapse">
+                <ul class="navbar-right">
+                    <li>
+                        <a class="navbar-link" style="padding:15px 0px;"><img src="./images/noavatar.jpg" height="40" class="img-circle" id="navAvatarView"></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">
+                            <span id="nickname_display" class="form-control">安</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- <li><a href="#" data-toggle="modal" data-target="#userEditProfile">基本信息</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#userAvatarSetting">头像设置</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#userchangepwd">修改密码</a></li>
+                            <li role="separator" class="divider"></li> -->
+                            <li><a href="./index.html" onclick="logout();">退出</a></li>
+                        </ul>
+                    </li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                </ul>
+            </div>
+            <!-- navbar-collapse -->
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-7 col-lg-8">
+                <div class="col-xs-12 editor">
+                    <form class="row">
+                        <div class="form-group form-group-sm col-xs-10 col-md-9 col-lg-10">
+                            <input type="text" class="form-control" id="subject" placeholder="请输入你想要记录的标题！！">
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="row editor-textarea">
+                                <div class="col-xs-12 area">
+                                    <textarea name="text" id="text" cols="30" rows="14"></textarea>
+                                </div>
+                                <div class="col-xs-12 editor-operate">
+                                    <button class="btn btn-default" onclick="saveNote();return false;">保存</button>
+                                    <!-- <span style="margin-left:50px;background-color:#fcf8e3;color:green;display:none;" id="save_notice">已保存</span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--/.col-xs-12.col-sm-9-->
+            <div class="col-xs-12 col-md-5 col-lg-4" id="sidebar">
+                <div class="sidebar">
+                    <!-- <form class="form-inline" onsubmit="return searchNote()">
+                        <div class="form-group-xs">
+                            <div class="input-group col-xs-6">
+                                <input type="text" id="search_input">
+                                <div class="input-group-addon border-circle">
+                                    <button type="submit">search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form> -->
+                    <ul id="myTabs" class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="javascript:;" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true" onclick="viewNotes()" style="text-decoration: none;">笔记列表</a>
+                        </li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <div id="lately">
+                            <!-- 最近修改 //-->
+                            <div id="notes_lately">
+                                <table class="table table-condensed" id="mytable">
+                                    <thead>
+                                        <tr>
+                                            <th>id</th>
+                                            <th>标题</th>
+                                            <th>内容</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td id="_id"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <a href="javascript:;" onclick="deleteNote(this);">删除</a>&nbsp;
+                                                <a href="javascript:;" onclick="ModNote(this);">修改</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- 分页 //-->
+                        </div>
+                    </div>
+                    <!--/.tab-content-->
+                </div>
+                <!--/.sidebar-->
+            </div>
+            <!--/.col-xs-6.col-sm-4-->
+        </div>
+        <!--/row-->
+        <div class="row">
+            <div class="col-md-12">
+                <hr style="width:99%;border-color:#92969c;">
+            </div>
+        </div>
+        <footer>
+            <ul>
+                <li> <a href="#">笔记广场</a>&nbsp;&nbsp;</li>
+                <li> <a href="#">联系我们</a>&nbsp;&nbsp;</li>
+                <li> <a href="#">意见反馈</a>&nbsp;&nbsp;</li>
+                <li> <a href="#">打赏我们</a>&nbsp;&nbsp;</li>
+                <li> <a href="javascript:;">京ICP备14033451号-3</a></li>
+            </ul>
+        </footer>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</html>

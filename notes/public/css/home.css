@@ -1,0 +1,289 @@
+/* 重新定义文档根元素字体大小，以便于兼容chrome最小字体的限制，应用于rem控制文档间距和字体大小切换 */
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Microsoft YaHei", "simsun";
+    font-size: 16px;
+    background-color: #616975;
+}
+
+.navbar {
+    height: 4.375rem;
+    line-height: 0.9375rem;
+    background-color: #454c57;
+    border-bottom: 0.1875rem solid #34373d;
+    font-size: 0.875625rem;
+}
+
+.navbar .title,
+.navbar .navbar-right>li>a {
+    padding-top: 1.5625rem;
+    padding-bottom: 1.5625rem;
+    margin-top: -18px;
+    color: #fff;
+    height: 4.375rem;
+    /* border: 1px solid green; */
+}
+
+.navbar {
+    font-size: 14px;
+    word-spacing: 17.51px;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    position: relative;
+}
+
+.navbar .container .title h1 {
+    position: absolute;
+    font-family: '幼圆';
+    color: #96cc68;
+    line-height: 2.4rem;
+}
+
+.container .navbar-collapse ul,
+.container .navbar-collapse ul .dropdown {
+    position: absolute;
+    right: 0;
+}
+
+.container .navbar-collapse ul>li a {
+    text-decoration: none;
+}
+
+.container .navbar-collapse ul>li a img {
+    position: absolute;
+    left: -60px;
+    top: -20px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.container .navbar-collapse ul>li a span {
+    margin-left: -170px;
+    margin-top: -15px;
+    border: none;
+    background-color: transparent;
+    color: black;
+}
+
+.container .navbar-collapse .navbar-right {
+    position: absolute;
+    width: 15%;
+}
+
+.container .navbar-collapse .navbar-right li ul {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.container .navbar-collapse .navbar-right .dropdown-menu>li>a {
+    position: absolute;
+    right: -20%;
+    bottom: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+
+/* 笔记编辑区样式 */
+
+.editor {
+    padding: 1rem 1.25rem 0.3125rem;
+    background-color: #96cc68;
+    border-radius: 0.5rem;
+    width: 60%;
+}
+
+.editor form,
+.editor .form-group {
+    margin-bottom: 0;
+}
+
+.editor form input {
+    border-radius: 100px !important;
+}
+
+.editor form .nav>li>a {
+    padding: 0.0625rem 0.3125rem;
+    text-align: center;
+    font-size: 1.154375rem;
+    color: #ffffff;
+}
+
+.editor .dropdown .glyphicon-menu-down {
+    top: 0;
+}
+
+.editor .nav>li>a:focus,
+.editor .nav>li>a:hover {
+    background-color: transparent;
+}
+
+.editor .nav>li.open>a {
+    background-color: transparent;
+}
+
+.editor .dropdown-menu {
+    background-color: #96cc68;
+}
+
+.editor .dropdown-menu>li>a:focus,
+.editor .dropdown-menu>li>a:hover {
+    background-color: #f5f5f5;
+}
+
+.editor .editor-textarea {
+    margin-top: 1.05rem;
+    background-color: #f7f7f7;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.editor .editor-textarea textarea {
+    border: 1px solid transparent;
+    margin-top: 1px;
+    outline: none;
+    border-top: 0;
+    border-bottom: 0;
+    resize: none;
+    width: 100%;
+}
+
+.editor .editor-textarea .editor-operate {
+    margin-bottom: 1.415rem;
+}
+
+.editor .editor-textarea .editor-operate button {
+    background-color: #77b245;
+    border-radius: 100px;
+    color: #ffffff;
+}
+
+
+/* 侧边栏 */
+
+.sidebar {
+    background-color: #6f7783;
+    padding: 0.9629rem;
+    border-radius: 0.5rem;
+    width: 760px;
+    margin-left: -300px;
+}
+
+.sidebar form {
+    padding: 0.3125rem 0 1.25rem 0;
+    margin-bottom: 0.625rem;
+}
+
+.sidebar .input-group {
+    width: 15.375rem;
+}
+
+.sidebar input {
+    border: none;
+    outline: none;
+    border-radius: 6.25rem;
+    width: 200px;
+}
+
+.sidebar input:focus {
+    text-indent: 0.3rem;
+}
+
+.sidebar button {
+    float: right;
+    position: absolute;
+    right: 5%;
+    border-radius: 100px;
+    border: none;
+    background-color: #fff;
+}
+
+.sidebar .nav-tabs {
+    border: 0;
+}
+
+.sidebar .nav-tabs>li>a {
+    padding: 0.3125rem 3.125rem;
+    border: 0;
+    border-radius: 4px;
+    font-size: 0.875625rem;
+    color: #ffffff;
+}
+
+.sidebar .nav-tabs>li>a:hover,
+.sidebar .nav-tabs>li>a:focus {
+    background-color: #555c67;
+    color: #ffffff;
+}
+
+.sidebar .nav-tabs>li.open>a:hover,
+.sidebar .nav-tabs>li.open>a:focus {
+    background-color: #222427;
+    color: #ffffff;
+}
+
+.sidebar .nav-tabs>li.active>a {
+    background-color: #616975;
+    border: 0;
+}
+
+.sidebar .tab-content {
+    margin-top: 5px;
+}
+
+.sidebar .tab-content #notes_lately table {
+    width: 730px;
+}
+
+.sidebar .tab-content #notes_lately table tr td {
+    font-size: 12px;
+}
+
+.sidebar .tab-content #notes_lately table tr td>a {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* footer 底部链接 */
+
+footer {
+    height: 4.375rem;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+footer ul li {
+    position: relative;
+    display: inline-block;
+}
+
+footer ul li a {
+    font-family: "宋体";
+    font-size: 0.8rem;
+    color: #9fa2ac;
+    text-decoration: none;
+}
+
+footer ul li a:hover,
+footer ul li a:focus {
+    color: #ffffff;
+    text-decoration: underline;
+}
